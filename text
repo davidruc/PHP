@@ -1,0 +1,24 @@
+<!-- 
+FORMA ANTIGUA: 
+$nombre = (string) "EL bicho";
+    echo <<<JSON
+        {
+            "nombre": "${nombre}"
+        }    
+    JSON; 
+
+FORMA CORRECTA DE DECLARAR JSON:
+
+    $obj = (object) [];
+
+    $obj->nombre = (string) "El BICHO";
+    $obj->apodo = (string) "CR7";
+    $obj->edad = (integer) 38;  
+
+    echo json_encode($obj) ; 
+
+
+
+
+
+-->
