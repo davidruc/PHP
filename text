@@ -17,7 +17,26 @@ FORMA CORRECTA DE DECLARAR JSON:
 
     echo json_encode($obj) ; 
 
+LLAMADO A APIS 
+    header("Content-type:application/json");
 
+    $config = [];
+    $config ["http"]=(array)[];
+    $config ["http"]["method"]=(string) "GET";
+    $config ["http"]["header"]=(string) "Content-type:application/json";
+    $strm = stream_context_create($config);
+
+    $res = file_get_contents("https://pokeapi.co/api/v2/pokemon", false, $strm);
+
+    echo $res;
+
+    *main*:
+    let btn = document.querySelector("#btn");
+    let uri = "http://localhost/SpUkM01-086/PHP"
+    btn.addEventListener("click", async(e)=>{
+    let res = await (await fetch(`${uri}/api.php`)).json();
+    console.log(res);
+})
 
 
 
